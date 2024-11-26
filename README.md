@@ -1,6 +1,3 @@
-# S206_NP2
-Segunda prova de Qualidade de Software
-
 # Alunos:
 Beatriz de Araújo Cardozo - 339
 Vínicius Carvalho Ensá - 
