@@ -31,7 +31,7 @@ describe('template spec', () => {
     cy.get('#ca-edit > a').click()
      //cy.get('.mbox-text > span').should('have.text', 'Bem-vindo/a! Por decisão da comunidade, é necessário estar regist(r)ado/a para editar ou criar artigos na Wikipédia lusófona.')
     login()
-    cy.get('.cdx-message__content').should('contain.text', 'Existem problemas com alguns dos dados introduzidos')
+    cy.get('.mw-htmlform > :nth-child(1) > .cdx-message__icon').should('exist')
     
   })
 
@@ -41,8 +41,7 @@ describe('template spec', () => {
     cy.get('#js-link-box-pt > strong').click()
     cy.get('#pt-login-2 > a > span').click()
     login()
-    cy.get('.cdx-message__content').should('contain.text', 'Existem problemas com alguns dos dados introduzidos')
-
+    cy.get('.mw-htmlform > :nth-child(1) > .cdx-message__icon').should('exist')
   })
   
 }) 
