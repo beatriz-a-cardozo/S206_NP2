@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "92f842d4-2a4e-431d-9bbe-fc2ee2ad80b4",
+		"name": "Prova_Lab_CatApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39461264"
+	},
+	"item": [
+		{
+			"name": "Post_Favoritos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "live_t3J7IuDiwPZxJTq56lz4y2LW1B7FUUPnVNfgaQAlNVnzLwlAu2RwQlg9xJ4M19QH",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"image_id\": \"sPMOo3Jn2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.thecatapi.com/v1/favourites",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thecatapi",
+						"com"
+					],
+					"path": [
+						"v1",
+						"favourites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TESTE DE FALHA (falta de parâmetro)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "live_t3J7IuDiwPZxJTq56lz4y2LW1B7FUUPnVNfgaQAlNVnzLwlAu2RwQlg9xJ4M19QH",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"image_id\": \"\", //parametro propositalmente vazio\r\n  \"sub_id\": \"Vinnie\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.thecatapi.com/v1/favourites",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thecatapi",
+						"com"
+					],
+					"path": [
+						"v1",
+						"favourites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca_API",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&has_breeds=true",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thecatapi",
+						"com"
+					],
+					"path": [
+						"v1",
+						"images",
+						"search"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "med"
+						},
+						{
+							"key": "mime_types",
+							"value": "jpg"
+						},
+						{
+							"key": "has_breeds",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
